@@ -173,6 +173,11 @@
 /****************************************
  * POWER / ADC
  ****************************************/
+//Checked the pinout of the volt sensor trough betaflight and it spit out this:
+//resource ADC_BATT 1 C04 resource ADC_CURR 1 C05
+//I would think if it works on betaflight the fysical pins will be the same so we can enable the ADC.
+
+
 // NOTE:
 // INAV expects ADC channel mapping (ADC_CHANNEL_n_PIN etc.).
 // That mapping is specific to MCU pin -> ADC channel numbers.
@@ -187,19 +192,19 @@
 //
 // Example for later (do NOT paste until you confirm channels):
 //
-// #define USE_ADC
-// #define ADC_INSTANCE                ADC1
+ #define USE_ADC
+ #define ADC_INSTANCE                ADC1
 //
-// #define ADC_CHANNEL_1_PIN           PC4   // VBAT
-// #define ADC_CHANNEL_2_PIN           PC5   // CURRENT
+ #define ADC_CHANNEL_1_PIN           PC4   // VBAT
+ #define ADC_CHANNEL_2_PIN           PC5   // CURRENT
 //
-// #define VBAT_ADC_CHANNEL            ADC_CHN_1
-// #define CURRENT_METER_ADC_CHANNEL   ADC_CHN_2
+ #define VBAT_ADC_CHANNEL            ADC_CHN_1
+ #define CURRENT_METER_ADC_CHANNEL   ADC_CHN_2
 //
-// #define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
-// #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
-// #define DEFAULT_VOLTAGE_METER_SCALE 150
-// #define CURRENT_METER_SCALE         99
+ #define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
+ #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
+ #define DEFAULT_VOLTAGE_METER_SCALE 150
+ #define CURRENT_METER_SCALE         99
 
 /****************************************
  * MOTOR OUTPUT / DSHOT
